@@ -13,6 +13,10 @@ const UserSchema = new mongoose.Schema(
         },
         description: {
             type: String,
+            required: true,
+        },
+        Image: {
+            type: String,
         },
         
     },

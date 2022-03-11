@@ -8,7 +8,8 @@ import { ToastContainer, toast } from 'react-toastify';
 function Food({
     foodApi,
     handleChangeLoading,
-    _id
+    _id,
+    callApi
 }) {
     const [editClick, setEditClick] = useState(false);
     const [deleteClick, setDeleteClick] = useState(false);
@@ -28,7 +29,7 @@ function Food({
         try {
             const res = await axios.delete(`http://localhost:5000/v1/api/food/delete/${_id}`, ).then((res) => {
                 //toast
-                toast.success(" Create Item Successfully!!!", {
+                toast.success("Delete Food Successfully!!!", {
                     position: toast.POSITION.TOP_RIGHT,
                     autoClose: 2000
                 });
@@ -36,7 +37,7 @@ function Food({
             })
                 .catch((err) => {
                     //toast
-                    toast.error("Create Item failed", {
+                    toast.error("Delete Food failed", {
                         position: toast.POSITION.TOP_RIGHT,
                         autoClose: 2000
                     });
@@ -79,15 +80,15 @@ function Food({
                             deleteClick && <div className="delete-food">
                                 <button
                                     type="button"
-                                    onClick={() => handleClickDelete(false)}
-                                    className="btn-food_edit"
-                                >cancel
-                                </button>
-                                <button
-                                    type="button"
                                     onClick={() => handleDelete()}
                                     className="btn-food_delete"
                                 >Delete
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => handleClickDelete(false)}
+                                    className="btn-food_edit"
+                                >cancel
                                 </button>
                             </div>
                         }
@@ -98,6 +99,7 @@ function Food({
                                 _id={_id}
                                 handleClickEdit={handleClickEdit}
                                 setDeleteClick={setDeleteClick}
+                                callApi={callApi}
                             />
                         }
                     </div>

@@ -7,7 +7,7 @@ const product = {
             const foods = await Food.find().sort(
                 '-createdAt',
             );
-            return res.json(foods);
+            return res.status(200).json(foods);
         } catch (err) {
             console.log(err);
             return res.status(500).json({ msg: err.message });
@@ -17,7 +17,7 @@ const product = {
         try {
             const id = req.params.id;
             const product = await Food.findById(id);
-            return res.json(product);
+            return res.status(200).json(product);
         } catch (err) {
             console.log(err);
             return res.status(500).json({ msg: err.message });

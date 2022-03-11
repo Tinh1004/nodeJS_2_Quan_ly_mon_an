@@ -22,10 +22,10 @@ function Home({
                 setArray(persons);
 
                 //toast
-                toast.success("Get Data Successfully!!!", {
-                    position: toast.POSITION.TOP_RIGHT,
-                    autoClose: 2000
-                });
+                // toast.success("Get Data Successfully!!!", {
+                //     position: toast.POSITION.TOP_RIGHT,
+                //     autoClose: 2000
+                // });
 
                 console.log(persons);
             })

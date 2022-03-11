@@ -33,10 +33,10 @@ function FoodId({
                 setFoodApi(persons);
 
                 //toast
-                toast.success("Get Data Successfully!!!", {
-                    position: toast.POSITION.TOP_RIGHT,
-                    autoClose: 2000
-                });
+                // toast.success("Get Data Successfully!!!", {
+                //     position: toast.POSITION.TOP_RIGHT,
+                //     autoClose: 2000
+                // });
 
                 // console.log(persons);
             })
@@ -53,7 +53,7 @@ function FoodId({
     return (
         <>
             <h1>Food Id: {_id}</h1>
-            {foodApi && <Food handleChangeLoading={handleChangeLoading} foodApi={foodApi} _id={_id}></Food>}
+            {foodApi && <Food callApi={callApi} handleChangeLoading={handleChangeLoading} foodApi={foodApi} _id={_id}></Food>}
         </>
     )
 

@@ -30,6 +30,9 @@ function FormCreate({
                     position: toast.POSITION.TOP_RIGHT,
                     autoClose: 2000
                 });
+                setName("");
+                setPrice(0);
+                setDescription("");
             })
                 .catch((err) => {
                     //toast

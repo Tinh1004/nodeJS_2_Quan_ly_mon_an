@@ -8,7 +8,8 @@ function FormEditFood({
     handleChangeLoading,
     foodApi,
     _id,
-    handleClickEdit
+    handleClickEdit,
+    callApi
 }) {
     const [name, setName] = useState("");
     const [price, setPrice] = useState(0);
@@ -35,14 +36,15 @@ function FormEditFood({
                 console.log(person);
 
                 //toast
-                toast.success(" Create Item Successfully!!!", {
+                toast.success("Update Food Successfully!!!", {
                     position: toast.POSITION.TOP_RIGHT,
                     autoClose: 2000
                 });
+                callApi();
             })
                 .catch((err) => {
                     //toast
-                    toast.error("Create Item failed", {
+                    toast.error("Update Food failed", {
                         position: toast.POSITION.TOP_RIGHT,
                         autoClose: 2000
                     });
